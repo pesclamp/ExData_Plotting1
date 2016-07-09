@@ -21,6 +21,7 @@ hpc_all <- read.csv("data/household_power_consumption.txt",
 
 # Convert date and time columns
 hpc_all <- mutate(hpc_all, Date = as.Date(Date, "%d/%m/%Y"))
+hpc_all <- mutate(hpc_all, DateTime = as.POSIXct(strptime(paste(Date, Time), "%Y-%m-%d %H:%M:%S")))
 
 # Subset necesary rows
 hpc_2d <- subset(hpc_all,
