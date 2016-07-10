@@ -1,21 +1,23 @@
 # Prepare environment
 library("dplyr")
-if (!dir.exists("data")) {
-  dir.create("data")
-}
-
-# Download & unzip data file
-if (!file.exists("data/household_power_consumption.zip")) {
-  download.file("https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip",
-                "data/household_power_consumption.zip")
-}
-
-if (!file.exists("data/household_power_consumption.txt")) {
-  unzip("data/household_power_consumption.zip",
-        exdir = "data")
-}
 
 if (!exists("hpc_2d")) {
+
+  if (!dir.exists("data")) {
+    dir.create("data")
+  }
+  
+  # Download & unzip data file
+  if (!file.exists("data/household_power_consumption.zip")) {
+    download.file("https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip",
+                  "data/household_power_consumption.zip")
+  }
+  
+  if (!file.exists("data/household_power_consumption.txt")) {
+    unzip("data/household_power_consumption.zip",
+          exdir = "data")
+  }
+
   # Read file
   hpc_all <- read.csv("data/household_power_consumption.txt",
                       sep=";",
