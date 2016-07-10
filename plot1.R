@@ -1,3 +1,6 @@
+# Prepare environment
+source(file = "prepare_data.R")
+
 # Plot 1
 png(filename = "plot1.png", width = 480, height = 480)
 hist(hpc_2d$Global_active_power,

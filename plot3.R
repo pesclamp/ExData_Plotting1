@@ -1,3 +1,6 @@
+# Prepare environment
+source(file = "prepare_data.R")
+
 # Plot 3
 png(filename = "plot3.png", width = 480, height = 480)
 plot(hpc_2d$DateTime,

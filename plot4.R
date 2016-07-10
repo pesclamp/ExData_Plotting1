@@ -1,3 +1,6 @@
+# Prepare environment
+source(file = "prepare_data.R")
+
 # Plot 4
 png(filename = "plot4.png", width = 480, height = 480)
 
